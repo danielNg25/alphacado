@@ -29,13 +29,14 @@ contract Alphacado is TokenSender, TokenReceiver {
         registry = IAlphacadoChainRegistry(_registry);
     }
 
-    event CrossChainDepositSent(
+    event CrossChainRequest(
         uint256 requestId,
         uint16 targetChain,
         uint16 targetChainActionId,
         uint256 USDCAmount,
         address sender,
-        address recipient
+        address recipient,
+        bytes payload
     );
     event CrossChainDepositReceived(
         uint256 sourceChainRequestId,
@@ -61,21 +62,22 @@ contract Alphacado is TokenSender, TokenReceiver {
             payload
         );
 
-        _sendCrossChainDeposit(
-            targetChain,
-            receipient,
-            amountUSDC,
-            USDC,
-            packedPayload
-        );
+        // _sendCrossChainDeposit(
+        //     targetChain,
+        //     receipient,
+        //     amountUSDC,
+        //     USDC,
+        //     packedPayload
+        // );
 
-        emit CrossChainDepositSent(
+        emit CrossChainRequest(
             requestId,
             targetChain,
             targetChainActionId,
             amountUSDC,
             sender,
-            receipient
+            receipient,
+            packedPayload
         );
     }
 
@@ -120,14 +122,8 @@ contract Alphacado is TokenSender, TokenReceiver {
 
     function receivePayloadAndTokens(
         bytes memory payload,
-        TokenReceived[] memory receivedTokens,
-        bytes32, // sourceAddress
-        uint16,
-        bytes32 // deliveryHash
-    ) internal override onlyWormholeRelayer {
-        require(receivedTokens.length == 1, "Expected 1 token transfers");
-        require(receivedTokens[0].tokenAddress == USDC, "Expected USDC token");
-
+        uint256 amount
+    ) public onlyWormholeRelayer {
         (
             uint16 sourceChainId,
             uint256 sourceChainRequestId,
@@ -139,8 +135,8 @@ contract Alphacado is TokenSender, TokenReceiver {
         executeReceived(
             sourceChainId,
             sourceChainRequestId,
-            receivedTokens[0].tokenAddress,
-            receivedTokens[0].amount,
+            USDC,
+            amount,
             actionId,
             recipient,
             actionPayload

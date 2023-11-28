@@ -3,8 +3,8 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 import {
-    AlphacadoMock__factory,
-    AlphacadoMock,
+    Alphacado__factory,
+    Alphacado,
     UniswapAdapterV2TokenAdapterMock__factory,
     UniswapAdapterV2TokenAdapterMock,
     ERC20Mock__factory,
@@ -23,7 +23,7 @@ import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
 describe("UniV2Adapter", () => {
     let user: SignerWithAddress;
     let mockUSDC: ERC20Mock;
-    let alphacado: AlphacadoMock;
+    let alphacado: Alphacado;
     let univ2Adapter: UniswapAdapterV2TokenAdapterMock;
     let registry: AlphacadoChainRegistry;
     let tokenFactory: TokenFactory;
@@ -46,8 +46,9 @@ describe("UniV2Adapter", () => {
 
         registry = await AlphacadoChainRegistry.deploy();
 
-        const Alphacado: AlphacadoMock__factory =
-            await ethers.getContractFactory("AlphacadoMock");
+        const Alphacado: Alphacado__factory = await ethers.getContractFactory(
+            "Alphacado",
+        );
         alphacado = await Alphacado.deploy(
             await registry.getAddress(),
             await mockUSDC.getAddress(),
@@ -131,7 +132,7 @@ describe("UniV2Adapter", () => {
                     user.address,
                     payload,
                 ),
-            ).to.revertedWithCustomError(alphacado, "CallSuccess");
+            ).to.emit(alphacado, "CrossChainRequest");
         });
     });
 
@@ -165,10 +166,7 @@ describe("UniV2Adapter", () => {
 
             await alphacado
                 .connect(user)
-                .receivePayloadAndTokensMock(
-                    payload,
-                    ethers.parseEther("2000"),
-                );
+                .receivePayloadAndTokens(payload, ethers.parseEther("2000"));
         });
     });
 });

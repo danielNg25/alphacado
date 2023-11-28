@@ -26,7 +26,7 @@ async function main() {
 
     console.log("ACCOUNT: " + admin);
 
-    const erc20: ERC20Mock = await ERC20Mock.deploy("Reward token", "RW");
+    const erc20: ERC20Mock = await ERC20Mock.deploy("USDC", "USDC");
     await erc20.waitForDeployment();
 
     const erc20Address = await erc20.getAddress();

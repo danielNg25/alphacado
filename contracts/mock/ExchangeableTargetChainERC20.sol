@@ -31,7 +31,7 @@ contract ExchangeableTargetChainERC20 is ERC20 {
             "ExchangeableTargetChainERC20: insufficient balance"
         );
 
-        exchangeToken.transfer(address(0), exchangeTokenAmount);
+        exchangeToken.transfer(address(1), exchangeTokenAmount);
 
         uint256 amount = (exchangeTokenAmount * rate) / RATE_DECIMALS;
 

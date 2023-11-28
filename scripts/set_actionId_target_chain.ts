@@ -3,18 +3,18 @@ import { Signer } from "ethers";
 const ethers = hre.ethers;
 import { Config } from "./config";
 
-import BNBContract from "../bnbtestnet-contracts.json";
-import MumbaiContract from "../mumbai-contracts.json";
+import BaobabContract from "../baobab-contracts.json";
+import SepoliaContract from "../sepolia-contracts.json";
 
 import {
     AlphacadoChainRegistry__factory,
     AlphacadoChainRegistry,
 } from "../typechain-types";
 
-const SourceChain = MumbaiContract;
-const TargetChain = BNBContract;
+const SourceChain = SepoliaContract;
+const TargetChain = BaobabContract;
 
-const config = Config.BNBTestnet;
+const config = Config.Baobab;
 
 async function main() {
     //Loading accounts

@@ -18,7 +18,7 @@ import {
     AlphacadoChainRegistry__factory,
 } from "../typechain-types";
 
-const config = Config.Mumbai;
+const config = Config.Baobab;
 
 async function main() {
     //Loading accounts

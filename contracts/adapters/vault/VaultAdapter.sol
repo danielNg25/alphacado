@@ -18,6 +18,8 @@ contract VaultAdapter is AdapterBase {
     ) external override {
         address vault = abi.decode(payload, (address));
 
+        
+
         IERC20(token).approve(vault, amount);
         IVault(vault).deposit(amount, receipient);
     }

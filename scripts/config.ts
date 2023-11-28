@@ -7,6 +7,14 @@ export const Config = {
         tokenBridge: "0xF890982f9310df57d00f659cf4fd87e65adEd8d7",
         wormHole: "0x706abc4E45D419950511e474C7B9Ed348A4a716c",
     },
+    Sepolia: {
+        chainId: 2,
+        router: "0x0",
+        usdc: "0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C",
+        wormholeRelayer: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        tokenBridge: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        wormHole: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+    },
     BNBTestnet: {
         chainId: 4,
         router: "0xD99D1c33F9fC3444f8101754aBC46c52416550D1",
@@ -18,10 +26,10 @@ export const Config = {
     Baobab: {
         chainId: 13,
         router: "0x0",
-        usdc: "0x0",
-        wormholeRelayer: "0x0",
-        tokenBridge: "0xC7A13BE098720840dEa132D860fDfa030884b09A",
-        wormHole: "0x1830CC6eE66c84D2F177B94D544967c774E624cA",
+        usdc: "0x473425f22e9B25d78dbE0234492b79172a2e6588",
+        wormholeRelayer: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        tokenBridge: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        wormHole: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
     },
     Mumbai: {
         chainId: 5,

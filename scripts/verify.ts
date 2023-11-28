@@ -1,8 +1,8 @@
 import * as hre from "hardhat";
-import * as contracts from "../mumbai-contracts.json";
+import * as contracts from "../sepolia-contracts.json";
 import { Config } from "./config";
 
-const config = Config.Mumbai;
+const config = Config.Sepolia;
 
 async function main() {
     try {

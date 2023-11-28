@@ -169,9 +169,41 @@ Adapters:
 -   `KlayStationAdapter`: 0xBbD61d22E2eB5667191B7aAFbbbD9e6A5aFA0df5
 -   `VaultAdapter`: 0x4fF499D8422fC9431176ce7D6A9a47ef33933c6D
 
-### Klaytn
+### Sepolia - SourceChain
 
--   `VaultFactory`: 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C
+-   `Alphacado`: 0x4f66d9428780b7c9e192DA9FB1BFc67fF484de5d
+-   `Registry`: 0xc01DCa59EcDa2a520f8CB55825721e607234e739
+-   `TokenFactory`:
+    0xBB48201ce454826cecf11424566dbb52307BE0D4
+
+Adapters:
+
+-   `UniV2LPAdapter`: 0xb60be58d595e16f3aA517eB88Ea3636bBe14c57F
+-   `UniV2TokenAdapter`:
+    0xb60be58d595e16f3aA517eB88Ea3636bBe14c57F
+
+### Klaytn - TargetChain
+
+-   `Alphacado`: 0xf30D771D5D1940C3Bbc44d200E87fcce29318CaC
+-   `Registry`: 0x5D7b35f85DeD2ebAB9a1EB6fdfC7E652AFcA408A
+-   `VaultFactory`: 0xF149Ee748C2553f2E8D450A27D7c647E28428781
+-   `TokenFactory`: 0x56897E97F1A7B83FB39d746b8A20b92c99d757D9
+
+Mock Addresses:
+
+-   `MockKlayBankPool`: 0xF913940686a4Ff79b7efEC95F67f33c32a059F3C
+-   `MockKlayStationPool`:
+    0x6291Cf69a372Fbb68a2dF0C619d1DE52F38bBa8f
+
+Adapters:
+
+-   `UniV2LPAdapter`: 0xF4c12757Aa3b68Fd6fBf3340228D3F06c4044278
+-   `UniV2TokenAdapter`:
+    0xF4c12757Aa3b68Fd6fBf3340228D3F06c4044278
+-   `KlayBankAdapter`:
+    0x237E22f7aA165659a603B5eB19a1bd7f2c618391
+-   `KlayStationAdapter`: 0xDD3FEcD49ef5f21D9F66d6a462BE5f1b07374F6f
+-   `VaultAdapter`: 0x2f803d06090EF86F344083Bcf245849FBb0e4BB0
 
 ## Simple Working case
 
