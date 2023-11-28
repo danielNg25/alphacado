@@ -3,7 +3,6 @@ pragma solidity ^0.8.17;
 
 import "./ExchangeableSourceChainERC20.sol";
 import "./ExchangeableTargetChainERC20.sol";
-import "./ExchangeToken.sol";
 
 contract TokenFactory {
     enum TokenType {
@@ -41,17 +40,6 @@ contract TokenFactory {
         );
         tokens[tokenCount] = token;
         tokenTypes[tokenCount] = TokenType.TargetChain;
-        tokenCount++;
-    }
-
-    function createExchangeToken(
-        address firstToken,
-        address secondToken,
-        uint256 rate
-    ) external returns (address token) {
-        token = address(new ExchangeableToken(firstToken, secondToken, rate));
-        tokens[tokenCount] = token;
-        tokenTypes[tokenCount] = TokenType.Exchange;
         tokenCount++;
     }
 }

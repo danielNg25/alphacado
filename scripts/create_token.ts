@@ -6,7 +6,7 @@ const ethers = hre.ethers;
 import { TokenFactory__factory, TokenFactory } from "../typechain-types";
 import { Config } from "./config";
 import BaobabContract from "../baobab-contracts.json";
-// import SepoliaContract from "../sepolia-contracts.json";
+import SepoliaContract from "../sepolia-contracts.json";
 const config = Config.Baobab;
 
 async function main() {
