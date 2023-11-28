@@ -18,7 +18,7 @@ import {
     AlphacadoChainRegistry__factory,
 } from "../typechain-types";
 
-const config = Config.Baobab;
+const config = Config.Sepolia;
 
 async function main() {
     //Loading accounts
