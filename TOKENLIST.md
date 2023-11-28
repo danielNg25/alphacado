@@ -19,3 +19,33 @@
 | 3   | USDT   | 0xE0177884e7f10CfDA32bD342c27B4ACc89A66ac9 |
 | 4   | ETH    | 0x2C0C3c13E75941d88700Ea4ff83563a368d72cd3 |
 | 5   | BTC    | 0xD93B5Bd519647DA81eD3e43F3d3f7e25E0A2505a |
+
+## Sepolia
+
+| No  | Token    | Address                                    |
+| --- | -------- | ------------------------------------------ |
+| 1   | USDC     | 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C |
+| 2   | Klaytn   | 0x7905548A08837061B9B247BEEd39E5F307c2BBAd |
+| 3   | USDT     | 0x14e43aA77DB231985d04D3A83B7195b6866f2324 |
+| 4   | ETH      | 0x0722102aAB6C417044A870CB1eDEe4EF51c81220 |
+| 5   | BTC      | 0x955525CeAA1d4e661024809327f30B605b5b53D4 |
+| --- | ------   | ------------------------------------------ |
+| 6   | ETH-Klay | 0x3Ab46E1648D74a0112D78fa83f6eBFE016Fe0105 |
+| 7   | ETH-BTC  | 0xa39C7B82ff1F23eF65f7b5aDD7dFbE3C700b25A6 |
+| 8   | ETH-USDT | 0x73C49c8432D38DE7Ae7aC5123c9666eC5136107C |
+| 9   | ETH-USDC | 0xaAF190fE7A6Fae45d299F0D1b5983EC8efa367De |
+
+## Klaytn
+
+| No  | Token    | Address                                    |
+| --- | -------- | ------------------------------------------ |
+| 1   | USDC     | 0x473425f22e9B25d78dbE0234492b79172a2e6588 |
+| 2   | Klaytn   | 0x9bBC56D7a806EA67A3D528C772550BdF99Ce4579 |
+| 3   | USDT     | 0x5f4Ccc4c4503Bd79AE210019b65dC5E2264fD6D2 |
+| 4   | ETH      | 0x49BeFa60218A2Bf9F41c65ecAa27ABbB6C4e0b25 |
+| 5   | BTC      | 0x92BC58eb0153300f36253d4ff0665bda2eb09A05 |
+| --- | ------   | ------------------------------------------ |
+| 6   | ETH-Klay | 0x65481e2F0cc8E127D9266beF1438864940513da9 |
+| 7   | ETH-BTC  | 0x674A13CFc3e2F6B8981C7842489EC6F6cFd5898D |
+| 8   | ETH-USDT | 0x9fd7037B6bD6F16a89D33bE16127E067c1c7a292 |
+| 9   | ETH-USDC | 0x642eDAC6E437F5D6037b7456966dA9d60edC9743 |
