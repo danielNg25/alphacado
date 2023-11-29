@@ -6,11 +6,12 @@ const gen = (
     minimumLiquidityReceiveTargetChain: bigint,
 ) => {
     const payload = ethers.AbiCoder.defaultAbiCoder().encode(
-        ["address", "address", "uint256"],
+        ["address", "address", "uint256", "bytes"],
         [
             targetChainUniV2Router,
             targetChainTokenB,
             minimumLiquidityReceiveTargetChain,
+            "0x",
         ],
     );
 
@@ -19,6 +20,6 @@ const gen = (
 
 gen(
     ethers.ZeroAddress, // target chain univ2 router
-    ethers.ZeroAddress, // target chain tokenB
-    ethers.parseEther("1"), // minimum liquidity receive target chain
+    "0x5f4Ccc4c4503Bd79AE210019b65dC5E2264fD6D2", // target chain tokenB
+    ethers.parseEther("0"), // minimum liquidity receive target chain
 );

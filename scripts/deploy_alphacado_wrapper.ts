@@ -1,9 +1,13 @@
 import * as hre from "hardhat";
 import * as fs from "fs";
-import { Signer, parseEther } from "ethers";
+import { Signer } from "ethers";
 const ethers = hre.ethers;
+import SepoliaCOntract from "../sepolia-contracts.json";
 
-import { ERC20Mock__factory, ERC20Mock } from "../typechain-types";
+import { AlphacadoWrapper__factory } from "../typechain-types";
+import { Config } from "./config";
+
+const config = Config.Sepolia;
 
 async function main() {
     //Loading accounts
@@ -11,9 +15,8 @@ async function main() {
     const admin = await accounts[0].getAddress();
     //Loading contracts' factory
 
-    const ERC20Mock: ERC20Mock__factory = await ethers.getContractFactory(
-        "ERC20Mock",
-    );
+    const AlphacadoWrapper: AlphacadoWrapper__factory =
+        await ethers.getContractFactory("AlphacadoWrapper");
 
     // Deploy contracts
     console.log(
@@ -26,23 +29,15 @@ async function main() {
 
     console.log("ACCOUNT: " + admin);
 
-    // const erc20: ERC20Mock = await ERC20Mock.deploy("USDC", "USDC");
-    // await erc20.waitForDeployment();
-    const erc20: ERC20Mock = <ERC20Mock>(
-        ERC20Mock.attach("0x473425f22e9B25d78dbE0234492b79172a2e6588")
+    const wrapper = await AlphacadoWrapper.deploy(
+        SepoliaCOntract.alphacado,
+        config.usdc,
     );
 
-    const erc20Address = await erc20.getAddress();
-
-    console.log("erc20 deployed at: ", erc20Address);
-
-    await erc20.mint(
-        "0xf30D771D5D1940C3Bbc44d200E87fcce29318CaC",
-        parseEther("1000000000000000"),
-    );
+    await wrapper.waitForDeployment();
 
     const contractAddress = {
-        erc20: erc20Address,
+        wrapper: await wrapper.getAddress(),
     };
 
     fs.writeFileSync("tokenContracts.json", JSON.stringify(contractAddress));

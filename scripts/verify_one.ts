@@ -3,12 +3,10 @@ import * as hre from "hardhat";
 async function main() {
     try {
         await hre.run("verify:verify", {
-            address: "0x5707F6d31a55d10dA5585B78AA7D95F9A41eBe7D",
+            address: "0x45D058A60f1f6B7510E9B7611F52f2A2eF42e098",
             constructorArguments: [
-                "Klaytn",
-                "KLAY",
-                "0x87A35f50E570F909F275F5C8AEC40FbeB9e76D17",
-                "20000000",
+                "0x6291Cf69a372Fbb68a2dF0C619d1DE52F38bBa8f",
+                "0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C",
             ],
             hre,
         });
