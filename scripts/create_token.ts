@@ -35,8 +35,8 @@ async function main() {
 
     console.log("Deploying token 1 contract");
     await tokenFactory.createTargetChainToken(
-        "Wrapped Klaytn",
-        "WKLAY",
+        "sKLAY",
+        "SKLAY",
         config.usdc,
         500000000,
     );
@@ -44,85 +44,19 @@ async function main() {
 
     console.log("Deploying token 2 contract");
     await tokenFactory.createTargetChainToken(
-        "Wrapped Ethereum",
-        "WETH",
+        "stKLAY",
+        "Stake.ly",
         config.usdc,
-        50000,
+        500000000,
     );
     await sleep(5000);
 
-    console.log("Deploying token 3 contract");
-    await tokenFactory.createTargetChainToken(
-        "Wrapped Bitcoin",
-        "WBTC",
-        config.usdc,
-        2700,
-    );
-    await sleep(5000);
-
-    console.log("Deploying token 4 contract");
-    await tokenFactory.createTargetChainToken(
-        "Tether USD",
-        "USDT",
-        config.usdc,
-        100000000,
-    );
-    await sleep(5000);
-
-    console.log("Deploying token 5 contract");
-    await tokenFactory.createTargetChainToken(
-        "ETH-Klay",
-        "ETH-Klay",
-        config.usdc,
-        50000,
-    );
-    await sleep(5000);
-
-    console.log("Deploying token 6 contract");
-    await tokenFactory.createTargetChainToken(
-        "ETH-BTC",
-        "ETH-BTC",
-        config.usdc,
-        2700,
-    );
-    await sleep(5000);
-
-    console.log("Deploying token 7 contract");
-    await tokenFactory.createTargetChainToken(
-        "ETH-USDT",
-        "ETH-USDT",
-        config.usdc,
-        2000000,
-    );
-    await sleep(5000);
-
-    console.log("Deploying token 8 contract");
-    await tokenFactory.createTargetChainToken(
-        "ETH-USDC",
-        "ETH-USDC",
-        config.usdc,
-        2000000,
-    );
-    await sleep(5000);
-
-    const WrappedKlaytn = await tokenFactory.tokens(10);
-    const WrappedEthereum = await tokenFactory.tokens(11);
-    const WrappedBitcoin = await tokenFactory.tokens(12);
-    const TetherUSD = await tokenFactory.tokens(13);
-    const ETHKlay = await tokenFactory.tokens(14);
-    const ETHBTC = await tokenFactory.tokens(15);
-    const ETHUSDT = await tokenFactory.tokens(16);
-    const ETHUSDC = await tokenFactory.tokens(17);
+    const sKLAY = await tokenFactory.tokens(18);
+    const stKLAY = await tokenFactory.tokens(19);
 
     const contractAddress = {
-        WraooedKlaytn: WrappedKlaytn,
-        WrappedEthereum: WrappedEthereum,
-        WrappedBitcoin: WrappedBitcoin,
-        TetherUSD: TetherUSD,
-        ETHKlay: ETHKlay,
-        ETHBTC: ETHBTC,
-        ETHUSDT: ETHUSDT,
-        ETHUSDC: ETHUSDC,
+        sKLAY: sKLAY,
+        stKLAY: stKLAY,
     };
 
     fs.writeFileSync("tokenContracts.json", JSON.stringify(contractAddress));

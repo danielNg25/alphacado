@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { Signer } from "ethers";
 const ethers = hre.ethers;
 
-import { VaultFactory__factory } from "../typechain-types";
+import { VaultFactory, VaultFactory__factory } from "../typechain-types";
 
 async function main() {
     //Loading accounts
@@ -25,7 +25,23 @@ async function main() {
     );
     console.log("ACCOUNT: " + admin);
 
-    const vault = await VaultFactory.deploy();
+    const vault = <VaultFactory>(
+        VaultFactory.attach("0xF149Ee748C2553f2E8D450A27D7c647E28428781")
+    );
+
+    await vault.deployVault(
+        "Klay Stake Vault",
+        "0x9bBC56D7a806EA67A3D528C772550BdF99Ce4579",
+        "0x473425f22e9B25d78dbE0234492b79172a2e6588",
+        1000000,
+        139692708,
+        0,
+        0,
+        "0x6be175D77B1B3f353f65A2E0648E0dDdD3090726",
+        0,
+        "0x6be175D77B1B3f353f65A2E0648E0dDdD3090726",
+    );
+
     const contractAddress = {
         vault: await vault.getAddress(),
     };

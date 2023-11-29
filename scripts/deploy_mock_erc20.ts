@@ -37,8 +37,8 @@ async function main() {
     console.log("erc20 deployed at: ", erc20Address);
 
     await erc20.mint(
-        "0xf30D771D5D1940C3Bbc44d200E87fcce29318CaC",
-        parseEther("1000000000000000"),
+        "0xF149Ee748C2553f2E8D450A27D7c647E28428781",
+        parseEther("100000000000000000"),
     );
 
     const contractAddress = {
