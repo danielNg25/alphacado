@@ -55,18 +55,11 @@
 
 ## Tomochain
 
-| No  | Token    | Address                                    |
-| --- | -------- | ------------------------------------------ |
-| 1   | USDC     | 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C |
-| 2   | Klaytn   |                                            |
-| 3   | USDT     |                                            |
-| 4   | ETH      |                                            |
-| 5   | BTC      |                                            |
-| --- | ------   | ------------------------------------------ |
-| 6   | ETH-Klay |                                            |
-| 7   | ETH-BTC  |                                            |
-| 8   | ETH-USDT |                                            |
-| 9   | ETH-USDC |                                            |
-| --- | ------   | ------------------------------------------ |
-| 10  | sKLAY    |                                            |
-| 11  | stKLAY   |                                            |
+| No  | Token | Address                                    |
+| --- | ----- | ------------------------------------------ |
+| 1   | USDC  | 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C |
+| 2   | VIC   | 0x16c69e86bB26e56f1f2623Bb556d14d369bE1511 |
+| 3   | USDT  |                                            |
+| 4   | wETH  | 0x127b0b4A674fCbda01d95ba31cDfEC470836754d |
+| 5   | wBTC  | 0xd63031C80DDBE4FE5C6cc60dEAeaF8DF1Bd0B194 |
+| 6   | C98   | 0x6feEB778A1b9D9566E0e1a5383EfD5CF17B923CF |
