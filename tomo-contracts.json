@@ -1,0 +1,8 @@
+{
+    "vaultFactory": "0xBB48201ce454826cecf11424566dbb52307BE0D4",
+    "tokenFactory": "0xc01DCa59EcDa2a520f8CB55825721e607234e739",
+    "alphacado": "0xb60be58d595e16f3aA517eB88Ea3636bBe14c57F",
+    "registry": "0x4f66d9428780b7c9e192DA9FB1BFc67fF484de5d",
+    "univ2Adapter": "0xeFA7D4F3378a79A0985407b4e36955D54808df87",
+    "vaultAdapter": "0x2a4003A7992A0345ebF85cD062833de72583a236"
+}

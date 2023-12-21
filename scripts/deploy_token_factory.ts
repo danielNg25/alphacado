@@ -9,7 +9,7 @@ async function main() {
     const admin = await accounts[0].getAddress();
     //Loading contracts' factory
 
-    const tokenFactory = await ethers.getContractFactory("ExchangeableToken");
+    const exchangeable = await ethers.getContractFactory("ExchangeableToken");
     // Deploy contracts
     console.log(
         "==================================================================",
@@ -22,12 +22,17 @@ async function main() {
 
     console.log("Deploying token factory contract");
 
-    const tokenFactoryContract = await tokenFactory.deploy();
+    const exchangeableContract = await exchangeable.deploy({
+        gasLimit: 100000000,
+    });
     const contractAddress = {
-        tokenFactory: await tokenFactoryContract.getAddress(),
+        tokenFactory: await exchangeableContract.getAddress(),
     };
 
-    fs.writeFileSync("contracts.json", JSON.stringify(contractAddress));
+    fs.writeFileSync(
+        "exchangeablecontracts.json",
+        JSON.stringify(contractAddress),
+    );
 }
 
 // We recommend this pattern to be able to use async/await everywhere

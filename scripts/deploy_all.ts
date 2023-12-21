@@ -33,18 +33,6 @@ async function main() {
     const AlphacadoChainRegistry: AlphacadoChainRegistry__factory =
         await ethers.getContractFactory("AlphacadoChainRegistry");
 
-    const MockKlayBankPool: MockKlayBankPool__factory =
-        await ethers.getContractFactory("MockKlayBankPool");
-
-    const KlayBankAdapter: KlayBankAdapter__factory =
-        await ethers.getContractFactory("KlayBankAdapter");
-
-    const MockKlayStationPool: MockKlayStationPool__factory =
-        await ethers.getContractFactory("MockKlayStationPool");
-
-    const KlayStationAdapter: KlayStationAdapter__factory =
-        await ethers.getContractFactory("KlayStationAdapter");
-
     const VaultFactory: VaultFactory__factory = await ethers.getContractFactory(
         "VaultFactory",
     );
@@ -69,23 +57,29 @@ async function main() {
     );
     console.log("ACCOUNT: " + admin);
     console.log("Deploying Mock contract");
-    const mockKlayBankPool = await MockKlayBankPool.deploy();
-    await mockKlayBankPool.waitForDeployment();
 
-    const mockKlayStationPool = await MockKlayStationPool.deploy();
-    await mockKlayStationPool.waitForDeployment();
-
-    const vaultFactory = await VaultFactory.deploy();
+    const vaultFactory = await VaultFactory.deploy({
+        gasLimit: 100000000,
+    });
     await vaultFactory.waitForDeployment();
 
+    await sleep(5000);
+
     console.log("Deploying TokenFactory contract");
-    const tokenFactory = await TokenFactoryFactory.deploy();
+    const tokenFactory = await TokenFactoryFactory.deploy({
+        gasLimit: 100000000,
+    });
+    await tokenFactory.waitForDeployment();
+    await sleep(5000);
 
     console.log("Deploying Alphacado contract");
 
-    const registry = await AlphacadoChainRegistry.deploy();
+    const registry = await AlphacadoChainRegistry.deploy({
+        gasLimit: 100000000,
+    });
 
     await registry.waitForDeployment();
+    await sleep(5000);
     const alphacado: Alphacado = await Alphacado.deploy(
         await registry.getAddress(),
         config.usdc,
@@ -93,10 +87,13 @@ async function main() {
         config.wormholeRelayer,
         config.tokenBridge,
         config.wormHole,
+        {
+            gasLimit: 100000000,
+        },
     );
 
     await alphacado.waitForDeployment();
-
+    await sleep(5000);
     const alphacadoAddress = await alphacado.getAddress();
 
     console.log("alphacado deployed at: ", alphacadoAddress);
@@ -104,42 +101,35 @@ async function main() {
     console.log("Deploying Adapter contract");
 
     console.log("Deploying Univ2 Adapter contract");
-    const univ2Adapter = await UniswapAdapter.deploy(alphacadoAddress);
+    const univ2Adapter = await UniswapAdapter.deploy(alphacadoAddress, {
+        gasLimit: 100000000,
+    });
     await univ2Adapter.waitForDeployment();
-
-    await registry.setAdapter(1, await univ2Adapter.getAddress());
-    await registry.setAdapter(2, await univ2Adapter.getAddress());
-
-    console.log("Deploying KlayBank Adapter contract");
-    const klayBankAdapter = await KlayBankAdapter.deploy(alphacadoAddress);
-    await klayBankAdapter.waitForDeployment();
-
-    await registry.setAdapter(3, await klayBankAdapter.getAddress());
-
-    console.log("Deploying KlayStation Adapter contract");
-    const klayStationAdapter = await KlayStationAdapter.deploy(
-        alphacadoAddress,
-    );
-    await klayStationAdapter.waitForDeployment();
-
-    await registry.setAdapter(4, await klayStationAdapter.getAddress());
-
+    await sleep(5000);
+    await registry.setAdapter(1, await univ2Adapter.getAddress(), {
+        gasLimit: 100000000,
+    });
+    await sleep(5000);
+    await registry.setAdapter(2, await univ2Adapter.getAddress(), {
+        gasLimit: 100000000,
+    });
+    await sleep(5000);
     console.log("Deploying Vault Adapter contract");
-    const vaultAdapter = await VaultAdapter.deploy(alphacadoAddress);
+    const vaultAdapter = await VaultAdapter.deploy(alphacadoAddress, {
+        gasLimit: 100000000,
+    });
     await vaultAdapter.waitForDeployment();
-
-    await registry.setAdapter(5, await vaultAdapter.getAddress());
-
+    await sleep(5000);
+    await registry.setAdapter(5, await vaultAdapter.getAddress(), {
+        gasLimit: 100000000,
+    });
+    await sleep(5000);
     const contractAddress = {
-        mockKlayBankPool: await mockKlayBankPool.getAddress(),
-        mockKlayStationPool: await mockKlayStationPool.getAddress(),
         vaultFactory: await vaultFactory.getAddress(),
         tokenFactory: await tokenFactory.getAddress(),
         alphacado: alphacadoAddress,
         registry: await registry.getAddress(),
         univ2Adapter: await univ2Adapter.getAddress(),
-        klayBankAdapter: await klayBankAdapter.getAddress(),
-        klayStationAdapter: await klayStationAdapter.getAddress(),
         vaultAdapter: await vaultAdapter.getAddress(),
     };
 
@@ -154,3 +144,7 @@ main()
         console.error(error);
         process.exit(1);
     });
+
+const sleep = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+};

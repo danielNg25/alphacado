@@ -5,9 +5,9 @@ const ethers = hre.ethers;
 
 import { TokenFactory__factory, TokenFactory } from "../typechain-types";
 import { Config } from "./config";
-import BaobabContract from "../baobab-contracts.json";
+import TomoContract from "../tomo-contracts.json";
 // import SepoliaContract from "../sepolia-contracts.json";
-const config = Config.Baobab;
+const config = Config.Tomo;
 
 async function main() {
     //Loading accounts
@@ -30,33 +30,70 @@ async function main() {
     console.log("ACCOUNT: " + admin);
 
     const tokenFactory: TokenFactory = <TokenFactory>(
-        TokenFactoryFactory.attach(BaobabContract.tokenFactory)
+        TokenFactoryFactory.attach(TomoContract.tokenFactory)
     );
 
     console.log("Deploying token 1 contract");
     await tokenFactory.createTargetChainToken(
-        "sKLAY",
-        "SKLAY",
+        "Viction",
+        "VIC",
         config.usdc,
-        500000000,
+        125000000,
+        { gasLimit: 100000000 },
     );
     await sleep(5000);
 
     console.log("Deploying token 2 contract");
     await tokenFactory.createTargetChainToken(
-        "stKLAY",
-        "Stake.ly",
+        "Coin98",
+        "C98",
         config.usdc,
-        500000000,
+        475000000,
+        { gasLimit: 100000000 },
     );
     await sleep(5000);
 
-    const sKLAY = await tokenFactory.tokens(18);
-    const stKLAY = await tokenFactory.tokens(19);
+    console.log("Deploying token 3 contract");
+    await tokenFactory.createTargetChainToken(
+        "Wrapped Ether",
+        "WETH",
+        config.usdc,
+        50000,
+        { gasLimit: 100000000 },
+    );
+    await sleep(5000);
+
+    console.log("Deploying token 4 contract");
+    await tokenFactory.createTargetChainToken(
+        "Wrapped Bitcoin",
+        "WBTC",
+        config.usdc,
+        2500,
+        { gasLimit: 100000000 },
+    );
+    await sleep(5000);
+
+    console.log("Deploying token 5 contract");
+    await tokenFactory.createTargetChainToken(
+        "Tether USD",
+        "USDT",
+        config.usdc,
+        100000000,
+        { gasLimit: 100000000 },
+    );
+
+    const vic = await tokenFactory.tokens(0);
+    const c98 = await tokenFactory.tokens(1);
+    const wETH = await tokenFactory.tokens(2);
+    const wBTC = await tokenFactory.tokens(3);
+    const USDT = await tokenFactory.tokens(4);
 
     const contractAddress = {
-        sKLAY: sKLAY,
-        stKLAY: stKLAY,
+        vic,
+        c98,
+        wETH,
+        wBTC,
+        USDT,
     };
 
     fs.writeFileSync("tokenContracts.json", JSON.stringify(contractAddress));

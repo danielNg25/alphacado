@@ -39,4 +39,12 @@ export const Config = {
         tokenBridge: "0x377D55a7928c046E18eEbb61977e714d2a76472a",
         wormHole: "0x0CBE91CF822c73C2315FB05100C2F714765d5c20",
     },
+    Tomo: {
+        chainId: 88,
+        router: "0x0",
+        usdc: "0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C",
+        wormholeRelayer: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        tokenBridge: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+        wormHole: "0x72FDc59b6d0099094aBe9389EdFC4Ba87D2a3f28",
+    },
 };

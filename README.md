@@ -206,6 +206,22 @@ Adapters:
 -   `KlayStationAdapter`: 0xDD3FEcD49ef5f21D9F66d6a462BE5f1b07374F6f
 -   `VaultAdapter`: 0x2f803d06090EF86F344083Bcf245849FBb0e4BB0
 
+### Tomochain - TargetChain
+
+-   `Alphacado`: 0xb60be58d595e16f3aA517eB88Ea3636bBe14c57F
+-   `Registry`: 0x4f66d9428780b7c9e192DA9FB1BFc67fF484de5d
+-   `VaultFactory`: 0xBB48201ce454826cecf11424566dbb52307BE0D4
+-   `TokenFactory`: 0xc01DCa59EcDa2a520f8CB55825721e607234e739
+-   `ExchangeableToken`: 0x73caE5D3940614121b94257988A32C21bCDCf9ee
+
+Mock Addresses:
+
+Adapters:
+
+-   `UniV2LPAdapter`: 0xeFA7D4F3378a79A0985407b4e36955D54808df87
+-   `UniV2TokenAdapter`: 0xeFA7D4F3378a79A0985407b4e36955D54808df87
+-   `VaultAdapter`: 0x2a4003A7992A0345ebF85cD062833de72583a236
+
 ## Simple Working case
 
 Send `fromUniV2` on UniV2Adapters on Mumbai testnet with these following params:

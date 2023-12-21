@@ -45,6 +45,10 @@ const config: HardhatUserConfig = {
             url: `https://api.baobab.klaytn.net:8651`,
             accounts: [`${process.env.PRIVATE_KEY}`],
         },
+        tomotestnet: {
+            url: `https://rpc.testnet.tomochain.com`,
+            accounts: [`${process.env.PRIVATE_KEY}`],
+        },
     },
     etherscan: {
         apiKey: {

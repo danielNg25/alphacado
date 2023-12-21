@@ -26,20 +26,22 @@ async function main() {
 
     console.log("ACCOUNT: " + admin);
 
-    // const erc20: ERC20Mock = await ERC20Mock.deploy("USDC", "USDC");
-    // await erc20.waitForDeployment();
-    const erc20: ERC20Mock = <ERC20Mock>(
-        ERC20Mock.attach("0x473425f22e9B25d78dbE0234492b79172a2e6588")
-    );
+    const erc20: ERC20Mock = await ERC20Mock.deploy("USDC", "USDC", {
+        gasLimit: 100000000,
+    });
+    await erc20.waitForDeployment();
+    // const erc20: ERC20Mock = <ERC20Mock>(
+    //     ERC20Mock.attach("0x473425f22e9B25d78dbE0234492b79172a2e6588")
+    // );
 
     const erc20Address = await erc20.getAddress();
 
     console.log("erc20 deployed at: ", erc20Address);
 
-    await erc20.mint(
-        "0xF149Ee748C2553f2E8D450A27D7c647E28428781",
-        parseEther("100000000000000000"),
-    );
+    // await erc20.mint(
+    //     "0xF149Ee748C2553f2E8D450A27D7c647E28428781",
+    //     parseEther("100000000000000000"),
+    // );
 
     const contractAddress = {
         erc20: erc20Address,
