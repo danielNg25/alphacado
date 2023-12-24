@@ -55,11 +55,25 @@
 
 ## Tomochain
 
-| No  | Token | Address                                    |
-| --- | ----- | ------------------------------------------ |
-| 1   | USDC  | 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C |
-| 2   | VIC   | 0x16c69e86bB26e56f1f2623Bb556d14d369bE1511 |
-| 3   | USDT  |                                            |
-| 4   | wETH  | 0x127b0b4A674fCbda01d95ba31cDfEC470836754d |
-| 5   | wBTC  | 0xd63031C80DDBE4FE5C6cc60dEAeaF8DF1Bd0B194 |
-| 6   | C98   | 0x6feEB778A1b9D9566E0e1a5383EfD5CF17B923CF |
+| No  | Token     | Address                                    |
+| --- | --------- | ------------------------------------------ |
+| 1   | USDC      | 0x8843010C138A3eBF5080C6c6374BeA29A2de9e4C |
+| 2   | VIC       | 0x16c69e86bB26e56f1f2623Bb556d14d369bE1511 |
+| 3   | USDT      | 0xbB07650Aa77a3e21EF5a3180eAF21f4Ce3fB31AA |
+| 4   | wETH      | 0x127b0b4A674fCbda01d95ba31cDfEC470836754d |
+| 5   | wBTC      | 0xd63031C80DDBE4FE5C6cc60dEAeaF8DF1Bd0B194 |
+| 6   | C98       | 0x6feEB778A1b9D9566E0e1a5383EfD5CF17B923CF |
+| --- | -----     | ------------------------------------------ |
+| 1   | USDT_VIC  | 0x1ef15bA769d8141f3615F8257AA646f442103703 |
+| 2   | USDC_VIC  | 0x0d3cfa75fcD2c262374bBB21C7bacC5e4Af7eB80 |
+| 3   | C98_USDT  | 0xa5E002CE0b82Af12A617aB9C7Aa78f8E7897f03c |
+| 4   | C98_USDC  | 0xB0fcE4f2F8E4021ac1C3fEA2305A1e2D4eb3e223 |
+| 5   | C98_VIC   | 0x829F3e4AC34Df12b221AA3f94FC88a3A0D86f9E1 |
+| 6   | USDC_WETH | 0xFC23c2F5C3Bec388D6971d06C4CF30662D995dab |
+| 7   | USDT_WETH | 0x52215A52E53fF3EaA4437FC05470Fb8DfE0EebC1 |
+| 8   | C98_WETH  | 0xF6fe45E137451Ace68187DEDBcfa235938ccebBD |
+| 9   | VIC_WETH  | 0xCc9D7940f6D5Cb7590E2B60064F2391c64937E1D |
+| 10  | USDC_WBTC | 0x5D441d07a6A176A61CC9Ea9C2b8D3E31708dE1C5 |
+| 11  | USDT_WBTC | 0x617A22432e683b676CCDB2A61318647e2a935D6b |
+| 12  | C98_WBTC  | 0x6c1f92e0828bc7d67161C6253D60f065529b7F74 |
+| 13  | VIC_WBTC  | 0x7b5e1d27B59267933a322b9B1f76B3CD5c0Aa8d9 |
