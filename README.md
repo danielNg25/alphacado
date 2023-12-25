@@ -213,6 +213,7 @@ Adapters:
 -   `VaultFactory`: 0xBB48201ce454826cecf11424566dbb52307BE0D4
 -   `TokenFactory`: 0xc01DCa59EcDa2a520f8CB55825721e607234e739
 -   `ExchangeableToken`: 0x73caE5D3940614121b94257988A32C21bCDCf9ee
+-   `MultipleSwap`: 0x45F55BDBf1451Faa6C77C0A6Bc84C3CC6919Ea39
 
 Mock Addresses:
 
